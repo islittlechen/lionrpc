@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.my.lionrpc.lionrpc.server"/>
+    
+    <context:property-placeholder location="classpath:server.properties"/>
+    
+    <bean id="workerCenter" class="com.my.lionrpc.common.ApplicationWorkerCenter">
+    	<constructor-arg name="coreSize" value="4"/>
+    	<constructor-arg name="maxSize" value="20"/>
+    	<constructor-arg name="keepAliveSecond" value="10"/>
+    	<constructor-arg name="queueSize" value="100"/>
+    </bean>
+
+    <bean id="serviceRegistry" class="com.my.lionrpc.registry.ServiceRegistry">
+        <constructor-arg name="registryAddress" value="${registry.address}"/>
+    </bean>
+
+    <bean id="rpcServer" class="com.my.lionrpc.server.LionServer">
+        <constructor-arg name="serverAddress" value="${server.address}"/>
+        <constructor-arg name="workerCenter" ref="workerCenter"/>
+        <constructor-arg name="registry" ref="serviceRegistry"/>
+    </bean>
+
+</beans>
