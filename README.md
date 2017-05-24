@@ -50,6 +50,7 @@ JAVA RPC框架,基于netty,kryo,zookeeper and spring实现，可无缝接入Spri
     </bean>
 
 客户端业务类如果需要使用helloService接口可在类中添加如下注解即可完成对象注入：
+
     @Autowired
 	private IHelloService service;
 
