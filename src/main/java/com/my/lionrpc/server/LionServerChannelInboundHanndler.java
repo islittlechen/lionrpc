@@ -33,9 +33,15 @@ public class LionServerChannelInboundHanndler extends SimpleChannelInboundHandle
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        LOG.error("LionServerChannelInboundHanndler happen exception.",cause);
+        LOG.error("LionServerChannelInboundHanndler happen exception.remote address "+ctx.channel().remoteAddress().toString(),cause);
         if(ctx != null){
             ctx.close();
         }
+    }
+    
+    @Override
+    public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+    	super.channelUnregistered(ctx);
+    	LOG.error("LionServerChannelInboundHanndler channelUnregistered.remote address "+ctx.channel().remoteAddress().toString());
     }
 }

@@ -88,6 +88,7 @@ public class LionConnectionManager {
 					channel.writeAndFlush(request);
 					return;
 				}else{
+					LOGGER.error("连接已经断开:"+channel.remoteAddress());
 					channel = connectionPoll.take();
 				}
 			}

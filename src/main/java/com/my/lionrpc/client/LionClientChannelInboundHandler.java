@@ -23,13 +23,13 @@ public class LionClientChannelInboundHandler extends SimpleChannelInboundHandler
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
     	super.channelRegistered(ctx);
-    	LOG.debug("channel been registered");
+    	LOG.debug("channel been registered"+ctx.channel().remoteAddress().toString());
     }
     
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
     	ctx.close();
-    	LOG.error("channel happen excetion,closed.",cause);
+    	LOG.error("channel happen excetion,closed "+ctx.channel().remoteAddress().toString(),cause);
     }
     
 }
