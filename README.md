@@ -1,5 +1,5 @@
 # lionrpc
-JAVA RPC框架,基于netty,kayo,zookeeper and spring实现，可无缝接入Spring，客户端和服务器端均采用异步处理实现。
+JAVA RPC框架,基于netty,kryo,zookeeper and spring实现，可无缝接入Spring，客户端和服务器端均采用异步处理实现。
 
 服务器端Spring启动配置:
 
@@ -30,6 +30,7 @@ JAVA RPC框架,基于netty,kayo,zookeeper and spring实现，可无缝接入Spri
 
 
 客户端Spring启动配置:
+
     <context:property-placeholder location="classpath:client.properties"/>
 
     <!--zookeeper服务发现配置-->
@@ -54,9 +55,11 @@ JAVA RPC框架,基于netty,kayo,zookeeper and spring实现，可无缝接入Spri
 
 
 测试报告：
+
 测试机配置：
-  型号标识符：	MacBookPro12,1
-  处理器名称：	Intel Core i5
+
+  型号标识符：	MacBookPro12,1 
+  处理器名称：	Intel Core i5 
   处理器速度：	2.9 GHz
   处理器数目：	1
   核总数：	2
@@ -65,6 +68,7 @@ JAVA RPC框架,基于netty,kayo,zookeeper and spring实现，可无缝接入Spri
   内存：	8 GB
 
 服务器端和客户端在同一测试机上部署：
+
 客户端启动15个线程进行RPC调用，每个线程调用2万次，总耗时17秒，平均每秒完成1.76万次调用。
 
 备注：因时间问题测试有可能不是很充分，如有需要，建议下载后测试评估后再使用。
