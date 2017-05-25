@@ -1,5 +1,5 @@
 # lionrpc
-JAVA RPC框架,基于netty,kryo,zookeeper and spring实现，可无缝接入Spring，客户端和服务器端均采用异步处理实现。
+JAVA RPC框架,基于netty,kryo,zookeeper 和 spring实现，可无缝接入Spring，客户端和服务器端均采用异步处理，实现20000+TPS。负载均衡策略为轮询。
 
 服务器端Spring启动配置:
 
