@@ -80,7 +80,10 @@ JAVA RPC框架,基于netty,kryo,zookeeper and spring实现，可无缝接入Spri
 客户端启动15个线程进行RPC调用，每个线程调用1000万次（共调用1.5亿次），平均每秒完成2万+次调用。测试过程中有启停服务端测试，客户端可以正常重连。且服务器端和客户端内存占用较少。
 
 PID   COMMAND      %CPU      TIME     #TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP
+
 3381  java         77.4      07:46.49 34/4  0    106   118M+  0B     0B     596     服务端
+
 3380  java         159.9     17:53.84 51/1  0    140   165M+  0B     0B     596     客户端
+
 
 
