@@ -86,4 +86,4 @@ PID   COMMAND      %CPU      TIME     #TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP
 3380  java         159.9     17:53.84 51/1  0    140   165M+  0B     0B     596     客户端
 
 
-
+声明：开发过程中有借鉴其它java rpc框架设计思想。
