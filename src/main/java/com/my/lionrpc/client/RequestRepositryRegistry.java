@@ -37,6 +37,7 @@ public class RequestRepositryRegistry {
 			if(aync.getStatus().compareAndSet(0, 1)){
 				aync.setResponse(response);
 				aync.getLatch().countDown();
+				repository.remove(response.getRequestId());
 			}
 		}
 	}
