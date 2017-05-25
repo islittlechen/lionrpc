@@ -11,6 +11,14 @@ public class ServerTest {
 
 	@Test
 	public void test(){
-		System.out.println(1);
+		try {
+			Object o = new Object();
+			synchronized (o) {
+				o.wait();
+			}
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
